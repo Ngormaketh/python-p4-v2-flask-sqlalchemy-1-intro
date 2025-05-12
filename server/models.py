@@ -8,6 +8,12 @@ metadata = MetaData()
 db = SQLAlchemy(metadata=metadata)
 
 # define a model class by inheriting from db.Model.
+class Owner(db.Model):
+    __tablename__ = 'owners'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    email = db.Column(db.String)
 
 
 class Pet(db.Model):
